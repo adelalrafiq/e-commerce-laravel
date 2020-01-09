@@ -81,27 +81,21 @@
                                         <td>{{$product->color}}</td>
                                         <td>
                                             @if(!empty($product->image))
-                                            <img src="{{asset('uploads/products/'.$product->image)}}" alt=""
-                                                style="width:100px;">
+                                            <img src="{{asset('uploads/products/'.$product->image)}}" alt="" style="width:100px;">
                                             @endif
                                         </td>
                                         <td>{{$product->price}}</td>
                                         <td>
-                                            <input type="checkbox" class="ProductStatus btn btn-success"
-                                                rel="{{$product->id}}" data-toggle="toggle" data-on="Enabled"
-                                                data-off="Disabled" data-onstyle="success" data-offstyle="danger"
-                                                @if($product['status']=="1" ) checked @endif>
+                                            <input type="checkbox" class="ProductStatus btn btn-success" rel="{{$product->id}}" data-toggle="toggle" data-on="Enabled" data-off="Disabled" data-onstyle="success" data-offstyle="danger" @if($product['status']=="1" ) checked @endif>
                                             <div id="myElem" style="display:none;" class="alert alert-success">Status
                                                 Enabled
                                             </div>
                                         </td>
                                         <td>
-                                            <a href="{{url('/admin/add-attributes/'.$product->id)}}"
-                                                class="btn btn-warning btn-sm"><i class="fa fa-list"></i></a>
-                                            <a href="{{url('/admin/edit-product/'.$product->id)}}"
-                                                class="btn btn-add btn-sm"><i class="fa fa-pencil"></i></a>
-                                            <a href="{{url('/admin/delete-product/'.$product->id)}}"
-                                                class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> </a>
+                                            <a href="{{url('/admin/add-images/'.$product->id)}}" class="btn btn-info btn-sm" title="Add Images"><i class="fa fa-image"></i></a>
+                                            <a href="{{url('/admin/add-attributes/'.$product->id)}}" class="btn btn-warning btn-sm" title="Add Attributes"><i class="fa fa-list"></i></a>
+                                            <a href="{{url('/admin/edit-product/'.$product->id)}}" class="btn btn-add btn-sm" title="Edit Product"><i class="fa fa-pencil"></i></a>
+                                            <a href="{{url('/admin/delete-product/'.$product->id)}}" class="btn btn-danger btn-sm" title="Delete Product"><i class="fa fa-trash-o"></i> </a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2020 at 02:28 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Jan 09, 2020 at 03:56 PM
+-- Server version: 10.1.39-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,9 +46,9 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `name`, `text_style`, `sort_order`, `content`, `link`, `status`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Welcome To <br> Thewayshop', 'text-left', 1, 'See how your users experience your website in realtime or view <br>\r\ntrends to see any changes in performance over time.', '#', 1, '17758.jpg', '2020-01-06', '2020-01-06'),
-(2, 'Welcome To <br> Thewayshop', 'text-center', 2, 'See how your users experience your website in realtime or view <br>\r\ntrends to see any changes in performance over time.', '#', 1, '29571.jpg', '2020-01-06', '2020-01-06'),
-(3, 'Welcome To <br> Thewayshop', 'text-right', 3, 'See how your users experience your website in realtime or view <br>\r\ntrends to see any changes in performance over time.', '#', 1, '15797.jpg', '2020-01-06', '2020-01-06');
+(1, 'Welkom in ons Markt', 'left-text', 1, 'Markt van Transport', '#', 1, '68712.jpg', '2020-01-09', '2020-01-09'),
+(2, 'Welkom in ons Markt', 'left-center', 2, 'Markt van Transport', '#', 1, '5565.jpg', '2020-01-09', '2020-01-09'),
+(3, 'Welkom in ons Markt', 'left-right', 3, 'Markt van Transport', '#', 1, '8860.jpg', '2020-01-09', '2020-01-09');
 
 -- --------------------------------------------------------
 
@@ -72,13 +72,19 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `url`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 'T-Shirts', 't-shirts', 'T-Shirts', 1, '2020-01-03', '2020-01-06'),
-(2, 0, 'Wallet', 'wallet', 'Wallet', 1, '2020-01-03', '2020-01-03'),
-(3, 0, 'Shoes', 'shoes', 'Shoes', 1, '2020-01-03', '2020-01-03'),
-(4, 0, 'Shirts', 'shirts', 'Shirts', 1, '2020-01-03', '2020-01-03'),
-(7, 0, 'Bags', 'bags', 'Bags', 1, '2020-01-04', '2020-01-04'),
-(8, 0, 'Women Shoes', 'women-shoes', 'Women Shoes', 1, '2020-01-04', '2020-01-04'),
-(13, 1, 'White T-shirt', 'white-t-shirt', 'White T-Shirt', 1, '2020-01-06', '2020-01-06');
+(1, 0, 'Aanhanger', '#', 'Aanhanger', 1, '2020-01-09', '2020-01-09'),
+(2, 0, 'Bestelwagen of truck tot 7,5t', '#', 'Bestelwagen of truck tot 7,5t', 1, '2020-01-09', '2020-01-09'),
+(3, 0, 'Bouwmachine', '#', 'Bouwmachine', 1, '2020-01-09', '2020-01-09'),
+(4, 0, 'Bus', '#', 'Bus', 1, '2020-01-09', '2020-01-09'),
+(5, 0, 'Landbouwvoertuig', '#', 'Landbouwvoertuig', 1, '2020-01-09', '2020-01-09'),
+(6, 0, 'Oplegger', '#', 'Oplegger', 1, '2020-01-09', '2020-01-09'),
+(7, 0, 'Truck zwaarder dan 7,5t', '#', 'Truck zwaarder dan 7,5t', 1, '2020-01-09', '2020-01-09'),
+(8, 0, 'Vorkheftruck', '#', 'Vorkheftruck', 1, '2020-01-09', '2020-01-09'),
+(9, 0, 'Vrachtwagen met oplegger', '#', 'Vrachtwagen met oplegger', 1, '2020-01-09', '2020-01-09'),
+(10, 9, 'Volvo FH 420', '#', 'Volvo FH 420', 1, '2020-01-09', '2020-01-09'),
+(11, 9, 'Volvo FH 440', '#', 'Volvo FH 440', 1, '2020-01-09', '2020-01-09'),
+(12, 9, 'Volvo FH 460', '#', 'Volvo FH 460', 1, '2020-01-09', '2020-01-09'),
+(13, 9, 'Volvo FH 480', '#', 'Volvo FH 480', 1, '2020-01-09', '2020-01-09');
 
 -- --------------------------------------------------------
 
@@ -117,8 +123,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `name`, `code`, `color`, `description`, `price`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'White T-shirt', 'wts001', 'White', 'White T-shirt', 10, '26250.jpg', 1, '2020-01-03', '2020-01-06'),
-(2, 1, 'Black T-shirt', 'bts002', 'Black', 'Black T-Shirt', 12, '11537.jpg', 1, '2020-01-06', '2020-01-06');
+(1, 10, 'Volvo FH 420', '001', 'White', 'Volvo FH 420', 5900, '66129.jpg', 1, '2020-01-09', '2020-01-09');
 
 -- --------------------------------------------------------
 
@@ -142,14 +147,28 @@ CREATE TABLE `products_attributes` (
 --
 
 INSERT INTO `products_attributes` (`id`, `product_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-(1, 1, 'WTS001-S', 'Small', 8.00, 12, '2020-01-08', '2020-01-08'),
-(2, 1, 'WTS001-M', 'Medium', 10.00, 12, '2020-01-08', '2020-01-08'),
-(3, 1, 'WTS001-L', 'Large', 12.00, 12, '2020-01-08', '2020-01-08'),
-(4, 1, 'WTS001-XL', 'Extra Large', 15.00, 12, '2020-01-08', '2020-01-08'),
+(1, 1, 'WTS001-S', 'Small', 8.00, 12, '2020-01-08', '2020-01-09'),
+(2, 1, 'WTS001-M', 'Medium', 10.00, 12, '2020-01-08', '2020-01-09'),
+(3, 1, 'WTS001-L', 'Large', 12.00, 12, '2020-01-08', '2020-01-09'),
+(4, 1, 'WTS001-XL', 'Extra Large', 15.00, 12, '2020-01-08', '2020-01-09'),
 (5, 2, 'BTS002-S', 'Small', 8.00, 12, '2020-01-08', '2020-01-08'),
 (6, 2, 'BTS002-M', 'Medium', 10.00, 12, '2020-01-08', '2020-01-08'),
 (7, 2, 'BTS002-L', 'Large', 12.00, 12, '2020-01-08', '2020-01-08'),
-(8, 2, 'BTS002-XL', 'Extra Large', 15.00, 12, '2020-01-08', '2020-01-08');
+(9, 2, 'BTS002-XL', 'Extra Large', 15.00, 12, '2020-01-08', '2020-01-08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products_images`
+--
+
+CREATE TABLE `products_images` (
+  `id` int(10) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -210,6 +229,12 @@ ALTER TABLE `products_attributes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `products_images`
+--
+ALTER TABLE `products_images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -241,13 +266,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `products_attributes`
 --
 ALTER TABLE `products_attributes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `products_images`
+--
+ALTER TABLE `products_images`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

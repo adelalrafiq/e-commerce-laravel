@@ -9,6 +9,7 @@ use App\ProductsAttributes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Image;
+use App\ProductsImages;
 
 class ProductsController extends Controller
 {
@@ -184,5 +185,34 @@ class ProductsController extends Controller
     {
         ProductsAttributes::where(['id' => $id])->delete();
         return redirect()->back()->with('flash_message_error', 'Product Attribute is deleted!!');
+    }
+    public function editAttributes(Request $request, $id = null)
+    {
+        if ($request->isMethod('post')) {
+            $data = $request->all();
+            foreach ($data['attr'] as $key => $attr) {
+                ProductsAttributes::where(['id' => $data['attr'][$key]])->update([
+                    'sku' => $data['sku'][$key],
+                    'size' => $data['size'][$key],
+                    'price' => $data['price'][$key],
+                    'stock' => $data['stock'][$key],
+                ]);
+            }
+            return redirect()->back()->with('flash_message_success', 'Product Attributes updated!!');
+        }
+    }
+    public function addImages(Request $request, $id = null)
+    {
+        $productDetails = Products::where(['id' => $id])->first();
+        if ($request->isMethod('post')) {
+            $data = $request->all();
+            if ($request->hasfile('image')) {
+                $files  = $request->file('image');
+                foreach ($files as $file) {
+                    $image = new ProductsImages;
+                }
+            }
+        }
+        return view('admin.products.add_images')->with(compact('productDetails'));
     }
 }
