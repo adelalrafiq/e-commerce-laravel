@@ -6,10 +6,11 @@ use Alert;
 use App\Category;
 use App\Products;
 use App\ProductsAttributes;
+use App\ProductsImages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Image;
-use App\ProductsImages;
+
 
 class ProductsController extends Controller
 {
@@ -210,8 +211,16 @@ class ProductsController extends Controller
                 $files  = $request->file('image');
                 foreach ($files as $file) {
                     $image = new ProductsImages;
+                    $extension = $file->getClientOriginalExtension();
+                    $filename = rand(111,9999).'.'.$extension;
+                    $image_path = 'uploads/products/'.$filename;
+                    Image::make($file)->save($image_path);
+                    $image->image = $filename;
+                    $image->product_id = $data['product_id'];
+                    $image->save();
                 }
             }
+            return redirect('/admin/add-images/'.$id)->with('flash_message_success','Image has been updated!');
         }
         return view('admin.products.add_images')->with(compact('productDetails'));
     }
