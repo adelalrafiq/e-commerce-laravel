@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2020 at 03:56 PM
+-- Generation Time: Jan 10, 2020 at 03:59 PM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.3.5
 
@@ -114,6 +114,7 @@ CREATE TABLE `products` (
   `price` int(20) NOT NULL,
   `image` varchar(255) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '1',
+  `featured_products` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -122,8 +123,8 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `category_id`, `name`, `code`, `color`, `description`, `price`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 10, 'Volvo FH 420', '001', 'White', 'Volvo FH 420', 5900, '66129.jpg', 1, '2020-01-09', '2020-01-09');
+INSERT INTO `products` (`id`, `category_id`, `name`, `code`, `color`, `description`, `price`, `image`, `status`, `featured_products`, `created_at`, `updated_at`) VALUES
+(1, 10, 'Volvo FH 420', '001', 'White', 'Volvo FH 420', 5900, '66129.jpg', 1, 1, '2020-01-09', '2020-01-10');
 
 -- --------------------------------------------------------
 
@@ -169,6 +170,17 @@ CREATE TABLE `products_images` (
   `created_at` date NOT NULL,
   `updated_at` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products_images`
+--
+
+INSERT INTO `products_images` (`id`, `product_id`, `image`, `created_at`, `updated_at`) VALUES
+(1, 1, '8499.jpg', '2020-01-10', '2020-01-10'),
+(2, 1, '2337.jpg', '2020-01-10', '2020-01-10'),
+(3, 1, '5371.jpg', '2020-01-10', '2020-01-10'),
+(7, 1, '2333.jpg', '2020-01-10', '2020-01-10'),
+(8, 1, '2892.jpg', '2020-01-10', '2020-01-10');
 
 -- --------------------------------------------------------
 
@@ -272,13 +284,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products_attributes`
 --
 ALTER TABLE `products_attributes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `products_images`
 --
 ALTER TABLE `products_images`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
