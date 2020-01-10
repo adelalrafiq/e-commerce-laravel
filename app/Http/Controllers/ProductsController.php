@@ -146,9 +146,11 @@ class ProductsController extends Controller
 
     public function products($id = null)
     {
-        $productDetails = Products::where('id', $id)->first();
+        $productDetails = Products::with('attributes')->where('id', $id)->first();
+        $productsAltImages = ProductsImages::where('product_id', $id)->get();
+        $featuredProducts = Products::where(['featured_products' => 1])->get();
         //  echo $productDetails;die;
-        return view('wayshop.product_details')->with(compact('productDetails'));
+        return view('wayshop.product_details')->with(compact('productDetails', 'productsAltImages', 'featuredProducts'));
     }
 
     public function addAttributes(Request $request, $id = null)
@@ -212,16 +214,33 @@ class ProductsController extends Controller
                 foreach ($files as $file) {
                     $image = new ProductsImages;
                     $extension = $file->getClientOriginalExtension();
-                    $filename = rand(111,9999).'.'.$extension;
-                    $image_path = 'uploads/products/'.$filename;
+                    $filename = rand(111, 9999) . '.' . $extension;
+                    $image_path = 'uploads/products/' . $filename;
                     Image::make($file)->save($image_path);
                     $image->image = $filename;
                     $image->product_id = $data['product_id'];
                     $image->save();
                 }
             }
-            return redirect('/admin/add-images/'.$id)->with('flash_message_success','Image has been updated!');
+            return redirect('/admin/add-images/' . $id)->with('flash_message_success', 'Image has been updated');
         }
-        return view('admin.products.add_images')->with(compact('productDetails'));
+        $productImages = ProductsImages::where(['product_id' => $id])->get();
+        return view('admin.products.add_images')->with(compact('productDetails', 'productImages'));
+    }
+    public function deleteAltImage($id = null)
+    {
+        $productImage = ProductsImages::where(['id' => $id])->first();
+        $image_path = 'uploads/products';
+        if (file_exists($image_path . $productImage->image)) {
+            unlink($image_path . $productImage->image);
+        }
+        ProductsImages::where(['id' => $id])->delete();
+        Alert::success('Deleted', 'Successfully');
+        return redirect()->back();
+    }
+    public function updateFeatured(Request $request, $id = null)
+    {
+        $data = $request->all();
+        Products::where('id', $data['id'])->update(['featured_products' => $data['status']]);
     }
 }

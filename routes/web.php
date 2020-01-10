@@ -17,6 +17,7 @@
 
 Route::match(['get', 'post'], '/', 'IndexController@index');
 Route::get('/products/{id}', 'ProductsController@products');
+Route::get('/categories/{category_id}', 'IndexController@categories');
 
 Route::match(['get', 'post'], '/admin', 'AdminController@login');
 
@@ -40,12 +41,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::match(['get', 'post'], '/admin/edit-product/{id}', 'ProductsController@editProduct');
     Route::match(['get', 'post'], '/admin/delete-product/{id}', 'ProductsController@deleteProduct');
     Route::post('/admin/update-product-status', 'ProductsController@updateStatus');
+    Route::post('/admin/update-featured-product-status', 'ProductsController@updateFeatured');
 
     //Products Attributes
     Route::match(['get', 'post'], '/admin/add-attributes/{id}', 'ProductsController@addAttributes');
     Route::get('/admin/delete-attribute/{id}', 'ProductsController@deleteAttribute');
     Route::match(['get', 'post'], '/admin/edit-attributes/{id}', 'ProductsController@editAttributes');
     Route::match(['get', 'post'], '/admin/add-images/{id}', 'ProductsController@addImages');
+    Route::get('/admin/delete-alt-image/{id}', 'ProductsController@deleteAltImage');
 
     //Banners Route
     Route::match(['get', 'post'], '/admin/banners', 'BannersController@banners');

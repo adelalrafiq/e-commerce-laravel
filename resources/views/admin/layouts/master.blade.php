@@ -33,14 +33,14 @@
     <link href="{{asset('admin_assets/themify-icons/themify-icons.css')}}" rel="stylesheet" type="text/css" />
     <!-- End Global Mandatory Style
          =====================================================================-->
-    <!-- Start page Label Plugins 
+    <!-- Start page Label Plugins
          =====================================================================-->
     <!-- Emojionearea -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     <link href="{{asset('admin_assets/plugins/emojionearea/emojionearea.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- Monthly css -->
     <link href="{{asset('admin_assets/plugins/monthly/monthly.css')}}" rel="stylesheet" type="text/css" />
-    <!-- End page Label Plugins 
+    <!-- End page Label Plugins
          =====================================================================-->
     <!-- Start Theme Layout Style
          =====================================================================-->
@@ -110,6 +110,7 @@
     <script>
         $(document).ready( function () {
             $('#table_id').DataTable();
+            "paging" : false,
             //Update Product Status
             $('.ProductStatus').change(function(){
                 var id =$(this).attr('rel');
@@ -146,7 +147,46 @@
                         error:function(){
                             alert('Error');
                         }
-                    });  
+                    });
+                }
+            });
+               //Update Featured Status
+               $('.FeaturedStatus').change(function(){
+                var id =$(this).attr('rel');
+                if($(this).prop('checked')==true){
+                    $.ajax({
+                        headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        type : 'post',
+                        url : '/admin/update-featured-product-status',
+                        data : {status:'1',id:id},
+                        success: function(data){
+                            $("#message_success").show();
+                            setTimeout(function(){
+                                $("#message_success").fadeOut('slow');},2000);
+                            },
+                            error:function(){
+                                alert('Error');
+                        }
+                    });
+                }else{
+                    $.ajax({
+                        headers:{
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        type : 'post',
+                        url : '/admin/update-featured-product-status',
+                        data : {status:'0',id:id},
+                        success: function(resp){
+                            $("#message_error").show();
+                            setTimeout(function(){
+                                $("#message_error").fadeOut('slow');},2000);
+                        },
+                        error:function(){
+                            alert('Error');
+                        }
+                    });
                 }
             });
             //Update Category Status
@@ -227,7 +267,7 @@
                     });
                 }
             });
-           
+
             //Add Remove Fields Dynamically
             $(document).ready(function(){
             var maxField = 10; //Input fields increment limitation
@@ -235,15 +275,15 @@
             var wrapper = $('.field_wrapper'); //Input field wrapper
             var fieldHTML = '<div style="display:flex;"><input type="text" name="sku[]" id="sku" placeholder="SKU" class="form-control" style="width:120px;margin-right:5px;margin-top:5px;" /><input type="text" name="size[]" id="size" placeholder="Size" class="form-control" style="width:120px;margin-right:5px;margin-top:5px;" /><input type="text" name="price[]" id="price" placeholder="Price" class="form-control" style="width:120px;margin-right:5px;margin-top:5px;" /><input type="text" name="stock[]" id="stock" placeholder="Stock" class="form-control" style="width:120px;margin-right:5px;margin-top:5px;" /><a href="javascript:void(0);" class="remove_button">Remove</a></div>'; //New input field html
             var x = 1; //Initial field counter is 1
-            
+
             //Once add button is clicked
             $(addButton).click(function(){
             //Check maximum number of input fields
-            if(x < maxField){ x++; //Increment field counter 
+            if(x < maxField){ x++; //Increment field counter
                 $(wrapper).append(fieldHTML); //Add field html
-             } 
+             }
             });
-             //Once remove button is clicked 
+             //Once remove button is clicked
              $(wrapper).on('click', '.remove_button' , function(e){
                 e.preventDefault();
                 $(this).parent('div').remove(); //Remove field html
@@ -288,7 +328,7 @@
                      //dataType: 'json'
                      xmlUrl: 'events.xml'
                  });
-             
+
              //bar chart
              var ctx = document.getElementById("barChart");
              var myChart = new Chart(ctx, {
@@ -330,7 +370,7 @@
                      time: 5000
                  });
              }
-             dash();         
+             dash();
     </script>
     @include('sweetalert::alert')
 </body>

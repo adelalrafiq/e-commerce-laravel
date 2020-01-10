@@ -126,7 +126,7 @@
                                             <td><input type="text" name="size[]" value="{{$attribute->size}}" style="text-align:center;"></td>
                                             <td><input type="text" name="price[]" value="{{$attribute->price}}" style="text-align:center;"></td>
                                             <td><input type="text" name="stock[]" value="{{$attribute->stock}}" style="text-align:center;"></td>
-                                            <td>
+                                            <td class="center">
                                                 <div class="btn-group">
                                                     <input type="submit" value="update" class="btn btn-success" style:"height:30px;padding-top:4px;">
                                                     <a href="{{url('/admin/delete-attribute/'.$attribute->id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> </a>

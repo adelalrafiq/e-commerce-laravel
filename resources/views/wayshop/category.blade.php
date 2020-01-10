@@ -4,32 +4,6 @@
 <body>
 
 
-
-    <!-- Start Slider -->
-    <div id="slides-shop" class="cover-slides">
-        <ul class="slides-container">
-            @foreach($banners as $banner)
-            <li class="{{$banner->text_style}}">
-                <img src="uploads/banners/{{$banner->image}}" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>{!!$banner->name!!}</strong></h1>
-                            <p class="m-b-40">{!!$banner->content!!}</p>
-                            <p><a class="btn hvr-hover" href="{{$banner->link}}">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            @endforeach
-        </ul>
-        <div class="slides-navigation">
-            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </div>
-    </div>
-    <!-- End Slider -->
-
     <!-- Start Shop Page  -->
     <div class="shop-box-inner">
         <div class="container">
@@ -89,6 +63,7 @@
                         <div class="row product-categorie-box">
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                                <h1 align="center">{{$product_name->name}}</h1>
                                     <div class="row">
                                         @foreach($products as $product)
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -97,7 +72,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="uploads/products/{{$product->image}}" class="img-fluid"
+                                                <img src="{{asset('/uploads/products/'.$product->image)}}" class="img-fluid"
                                                         alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
@@ -133,7 +108,7 @@
     </div>
     <!-- End Shop Page -->
 
-    <!-- Start Blog  -->
+    {{-- <!-- Start Blog  -->
     <div class="latest-blog">
         <div class="container">
             <div class="row">
@@ -217,7 +192,7 @@
             </div>
         </div>
     </div>
-    <!-- End Blog  -->
+    <!-- End Blog  --> --}}
 
 
     <!-- Start Instagram Feed  -->
