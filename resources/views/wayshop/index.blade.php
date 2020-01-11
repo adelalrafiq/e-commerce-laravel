@@ -10,7 +10,7 @@
         <ul class="slides-container">
             @foreach($banners as $banner)
             <li class="{{$banner->text_style}}">
-                <img src="uploads/banners/{{$banner->image}}" alt="">
+                <img src="{{asset('uploads/banners/'.$banner->image)}}" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">

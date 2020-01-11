@@ -63,7 +63,7 @@
                         <div class="row product-categorie-box">
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                <h1 align="center">{{$product_name->name}}</h1>
+                                    <h1 align="center">{{$product_name->name}}</h1>
                                     <div class="row">
                                         @foreach($products as $product)
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -72,8 +72,8 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                <img src="{{asset('/uploads/products/'.$product->image)}}" class="img-fluid"
-                                                        alt="Image">
+                                                    <img src="{{asset('/uploads/products/'.$product->image)}}"
+                                                        class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right"
@@ -124,73 +124,73 @@
                     <div class="blog-box">
                         <div class="blog-img">
                             <img class="img-fluid" src="{{asset('front_assets/images/blog-img.jpg')}}" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
-                                    urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
-                                    mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i
-                                            class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i
-                                            class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+    </div>
+    <div class="blog-content">
+        <div class="title-blog">
+            <h3>Fusce in augue non nisi fringilla</h3>
+            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
+                urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
+                mollis. Praesent laoreet lacinia elit id lobortis.</p>
+        </div>
+        <ul class="option-blog">
+            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i class="far fa-heart"></i></a>
+            </li>
+            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i class="fas fa-eye"></i></a>
+            </li>
+            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i
+                        class="far fa-comments"></i></a></li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-6 col-lg-4 col-xl-4">
+        <div class="blog-box">
+            <div class="blog-img">
+                <img class="img-fluid" src="{{asset('front_assets/images/blog-img-01.jpg')}}" alt="" />
+            </div>
+            <div class="blog-content">
+                <div class="title-blog">
+                    <h3>Fusce in augue non nisi fringilla</h3>
+                    <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
+                        urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
+                        mollis. Praesent laoreet lacinia elit id lobortis.</p>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="{{asset('front_assets/images/blog-img-01.jpg')}}" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
-                                    urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
-                                    mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i
-                                            class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i
-                                            class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="{{asset('front_assets/images/blog-img-02.jpg')}}" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
-                                    urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
-                                    mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i
-                                            class="far fa-heart"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i
-                                            class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i
-                                            class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <ul class="option-blog">
+                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i
+                                class="far fa-heart"></i></a></li>
+                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i
+                                class="fas fa-eye"></i></a></li>
+                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i
+                                class="far fa-comments"></i></a></li>
+                </ul>
             </div>
         </div>
+    </div>
+    <div class="col-md-6 col-lg-4 col-xl-4">
+        <div class="blog-box">
+            <div class="blog-img">
+                <img class="img-fluid" src="{{asset('front_assets/images/blog-img-02.jpg')}}" alt="" />
+            </div>
+            <div class="blog-content">
+                <div class="title-blog">
+                    <h3>Fusce in augue non nisi fringilla</h3>
+                    <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet
+                        urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed
+                        mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                </div>
+                <ul class="option-blog">
+                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Likes"><i
+                                class="far fa-heart"></i></a></li>
+                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Views"><i
+                                class="fas fa-eye"></i></a></li>
+                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comments"><i
+                                class="far fa-comments"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
     </div>
     <!-- End Blog  --> --}}
 
@@ -281,6 +281,7 @@
         </div>
     </div>
     <!-- End Instagram Feed  -->
+
 
 </body>
 

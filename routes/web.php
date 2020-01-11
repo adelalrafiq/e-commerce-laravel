@@ -18,7 +18,7 @@
 Route::match(['get', 'post'], '/', 'IndexController@index');
 Route::get('/products/{id}', 'ProductsController@products');
 Route::get('/categories/{category_id}', 'IndexController@categories');
-
+Route::get('/get-product-price','ProductsController@getPrice');
 Route::match(['get', 'post'], '/admin', 'AdminController@login');
 
 Auth::routes();

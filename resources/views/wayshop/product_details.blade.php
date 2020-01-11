@@ -26,7 +26,8 @@
                     <div class="carousel-inner" role="listbox">
                         @foreach($productsAltImages as $key=> $images)
                         <div class="carousel-item {{$key==0 ? 'active' :''}} ">
-                            <img class="d-block w-100" src="{{asset('/uploads/products/'.$images->image)}}" alt="First slide"> </div>
+                            <img class="d-block w-100" src="{{asset('/uploads/products/'.$images->image)}}"
+                                alt="First slide"> </div>
                         @endforeach
                     </div>
                     <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
@@ -39,9 +40,10 @@
                     </a>
                     <ol class="carousel-indicators">
                         @foreach($productsAltImages as $key=> $images)
-                        <li data-target="#carousel-example-1" data-slide-to="{{$key}}" class="{{$key==0 ? 'active' :''}}">
-                            <img class="d-block w-100 img-fluid"
-                                src="{{asset('/uploads/products/'.$images->image)}}" alt="" />
+                        <li data-target="#carousel-example-1" data-slide-to="{{$key}}"
+                            class="{{$key==0 ? 'active' :''}}">
+                            <img class="d-block w-100 img-fluid" src="{{asset('/uploads/products/'.$images->image)}}"
+                                alt="" />
                         </li>
                         @endforeach
                     </ol>
@@ -50,7 +52,7 @@
             <div class="col-xl-7 col-lg-7 col-md-6">
                 <div class="single-product-details">
                     <h2>Product Name : {{$productDetails->name}}</h2>
-                    <h5>Product Price : €uro {{$productDetails->price}}</h5>
+                    <h5 id="getPrice">Product Price : €uro {{$productDetails->price}}</h5>
                     {{-- <h5> <del>$ 60.00</del> $40.79</h5> --}}
                     <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span>
                         <p>
@@ -60,10 +62,11 @@
                                 <li>
                                     <div class="form-group size-st">
                                         <label class="size-label">Size</label>
-                                        <select id="basic" class="selectpicker show-tick form-control">
+                                        <select id="selSize" class="selectpicker show-tick form-control">
                                             <option value="0">Size</option>
-                                             @foreach($productDetails->attributes as $sizes)
-                                        <option value="{{$productDetails->id}}-{{$sizes->size}}">{{$sizes->size}}</option>               @endforeach
+                                            @foreach($productDetails->attributes as $sizes)
+                                            <option value="{{$productDetails->id}}-{{$sizes->size}}">{{$sizes->size}}
+                                            </option> @endforeach
                                         </select>
                                     </div>
                                 </li>
@@ -117,7 +120,8 @@
                     <div class="item">
                         <div class="products-single fix">
                             <div class="box-img-hover">
-                                <img src="{{asset('uploads/products/'.$featuredProduct->image)}}" class="img-fluid" alt="Image">
+                                <img src="{{asset('uploads/products/'.$featuredProduct->image)}}" class="img-fluid"
+                                    alt="Image">
                                 <div class="mask-icon">
                                     <ul>
                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
