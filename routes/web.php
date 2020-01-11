@@ -18,12 +18,15 @@
 Route::match(['get', 'post'], '/', 'IndexController@index');
 Route::get('/products/{id}', 'ProductsController@products');
 Route::get('/categories/{category_id}', 'IndexController@categories');
-Route::get('/get-product-price','ProductsController@getPrice');
+Route::get('/get-product-price', 'ProductsController@getPrice');
 Route::match(['get', 'post'], '/admin', 'AdminController@login');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Register/Login
+Route::match(['get', 'post'], '/login-register', 'UsersController@register');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::match(['get', 'post'], '/admin/dashboard', 'AdminController@dashboard');
@@ -56,6 +59,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::match(['get', 'post'], '/admin/edit-banner/{id}', 'BannersController@editBanner');
     Route::match(['get', 'post'], '/admin/delete-banner/{id}', 'BannersController@deleteBanner');
     Route::post('/admin/update-banner-status', 'BannersController@updateStatus');
+
 });
 
 Route::get('/logout', 'AdminController@logout');
