@@ -14,20 +14,11 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="custom-select-box">
-                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="€ EUR">
-                        <option>€ EUR</option>
-                        <option>$ USD</option>
-                    </select>
-                </div>
-                <div class="right-phone-box">
-                    <p>Call US :- <a href="#"> +32485958268</a></p>
-                </div>
+
                 <div class="our-link">
                     <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Our location</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="{{url('/admin')}}">Login</a></li>
+                        <li><a href="{{url('/login-register')}}">Register</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,7 +38,7 @@
                     aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="{{asset('front_assets/images/logo.jpg')}}"
+                <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('front_assets/images/logo.jpg')}}"
                         class="logo" alt=""></a>
             </div>
             <!-- End Header Navigation -->

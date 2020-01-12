@@ -150,7 +150,7 @@ class ProductsController extends Controller
         $productsAltImages = ProductsImages::where('product_id', $id)->get();
         $featuredProducts = Products::where(['featured_products' => 1])->get();
         //  echo $productDetails;die;
-        return view('wayshop.product_details')->with(compact('productDetails', 'productsAltImages', 'featuredProducts'));
+        return view('trucksmarkt.product_details')->with(compact('productDetails', 'productsAltImages', 'featuredProducts'));
     }
 
     public function addAttributes(Request $request, $id = null)

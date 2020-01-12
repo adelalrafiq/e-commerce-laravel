@@ -26,8 +26,8 @@
                     <div class="carousel-inner" role="listbox">
                         @foreach($productsAltImages as $key=> $images)
                         <div class="carousel-item {{$key==0 ? 'active' :''}} ">
-                            <img class="d-block w-100" src="{{asset('/uploads/products/'.$images->image)}}"
-                                alt="First slide"> </div>
+                            <img class="d-block" src="{{asset('/uploads/products/'.$images->image)}}" alt="First slide">
+                        </div>
                         @endforeach
                     </div>
                     <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">

@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('trucksmarkt.layouts.master')
+@section('content')
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Admin Login - Trucks Markt</title>
 
-<!-- Mirrored from thememinister.com/crm/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jun 2019 11:09:03 GMT -->
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Admin Login - Trucks Markt</title>
-
-    <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="{{asset('admin_assets/dist/img/ico/favicon.png')}}" type="image/x-icon">
-    <!-- Bootstrap -->
-    <link href="{{asset('admin_assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <!-- Bootstrap rtl -->
-    <!--<link href="assets/bootstrap-rtl/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>-->
-    <!-- Pe-icon-7-stroke -->
-    <link href="{{asset('admin_assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}" rel="stylesheet" type="text/css" />
-    <!-- style css -->
-    <link href="{{asset('admin_assets/dist/css/stylecrm.css')}}" rel="stylesheet" type="text/css" />
-    <!-- Theme style rtl -->
-    <!--<link href="assets/dist/css/stylecrm-rtl.css" rel="stylesheet" type="text/css"/>-->
+<!-- Favicon and touch icons -->
+<link rel="shortcut icon" href="{{asset('admin_assets/dist/img/ico/favicon.png')}}" type="image/x-icon">
+<!-- Bootstrap -->
+<link href="{{asset('admin_assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+<!-- Bootstrap rtl -->
+<!--<link href="assets/bootstrap-rtl/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>-->
+<!-- Pe-icon-7-stroke -->
+<link href="{{asset('admin_assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}" rel="stylesheet" type="text/css" />
+<!-- style css -->
+<link href="{{asset('admin_assets/dist/css/stylecrm.css')}}" rel="stylesheet" type="text/css" />
+<!-- Theme style rtl -->
+<!--<link href="assets/dist/css/stylecrm-rtl.css" rel="stylesheet" type="text/css"/>-->
 </head>
 
 <body>
@@ -61,7 +54,7 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form action="{{url('admin')}}" id="loginForm" method="post">{{csrf_field()}}
+                        <form action="{{url('/admin')}}" id="loginForm" method="post">{{csrf_field()}}
                             <div class="form-group">
                                 <label class="control-label" for="username">Username</label>
                                 <input type="text" placeholder="example@gmail.com" title="Please enter you username"
@@ -76,7 +69,7 @@
                             </div>
                             <div>
                                 <button class="btn btn-add">Login</button>
-                                <a class="btn btn-warning" href="register.html">Register</a>
+                                <a class="btn btn-warning" href="{{url('/login-register')}}">Register</a>
                             </div>
                         </form>
                     </div>
@@ -93,4 +86,4 @@
 
 <!-- Mirrored from thememinister.com/crm/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jun 2019 11:09:03 GMT -->
 
-</html>
+@endsection
