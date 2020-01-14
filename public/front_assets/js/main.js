@@ -26,4 +26,5 @@ $(document).ready(function () {
         eyeImg: "front_assets/images/eye.svg", // toggle icon
         tooltip: true,
     });
+
 });

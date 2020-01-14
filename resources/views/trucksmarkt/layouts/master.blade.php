@@ -63,6 +63,10 @@
   <script src="{{asset('front_assets/js/contact-form-script.js')}}"></script>
   <script src="{{asset('front_assets/js/custom.js')}}"></script>
   <script src="{{asset('front_assets/js/jquery.passtrength.js')}}"></script>
+
+  <!-- jQuery - validate -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
   <!--Main.js -->
   <script src="{{asset('front_assets/js/main.js')}}"></script>
 

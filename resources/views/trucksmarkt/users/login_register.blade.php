@@ -21,9 +21,9 @@
     <div class="login-wrapper">
         <div class="container-center lg">
             @if(Session::has('flash_message_error'))
-            <div class="alert alert-sm alert-danger alert-block" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+            <div class="alert alert-sm alert-danger alert-block" style="background-color: #f4d2d2;">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">x</span>
                 </button>
                 <strong>{!! session('flash_message_error') !!}</strong>
             </div>
@@ -91,6 +91,52 @@
     <script src="{{asset('admin_assets/plugins/jQuery/jquery-1.12.4.min.js')}}" type="text/javascript"></script>
     <!-- bootstrap js -->
     <script src="{{asset('admin_assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+        // Validate Register form on keyup and submit
+        $('#registerForm').validate({
+            rules:{
+                username:{
+                    requird:true,
+                    minlength:2,
+                    lettersonly:true
+                },
+                passworsd:{
+                    requird:true,
+                    minlength:6
+                },
+                repeatpassword:{
+                    requird:true,
+                    equalTo: "#password" 
+                },
+                email:{
+                    requird:true,
+                    email:true
+                }                
+            },
+            messages:{
+                username:{
+                    required:"Please enter your Username",
+                    minlength:"Your Username must be atleast 2 characters long"
+                } 
+                password:{
+                    required:"Please enter your Password",
+                    minlength:"Your password must be atleast 6 characters long"
+                },
+                repeatpassword:{
+                    required:"Please retype your Password",
+                    equalTo: "Please retype the same password"
+                },
+                email:{
+                    required:"Please enter your Email",
+                    email:"Please enter valid Email"
+                } 
+
+            }
+        });
+        });
+        
+    </script>
 </body>
 
 <!-- Mirrored from thememinister.com/crm/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jun 2019 11:10:02 GMT -->
