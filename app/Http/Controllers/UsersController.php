@@ -16,10 +16,23 @@ class UsersController extends Controller
             $usersCount = User::where('email', $data['email'])->count();
             if ($usersCount > 0) {
                 return redirect()->back()->with('flash_message_error', 'Email already exists!');
-            }else{
-                echo "success";die;
+            } else {
+                echo "success";
+                die;
             }
         }
         return view('trucksmarkt.users.login_register');
+    }
+    public function  checkEmail(Request $request)
+    {
+        // Check if User already exists
+        $data = $request->all();
+        $usersCount = User::where('email', $data['email'])->count();
+        if ($usersCount > 0) {
+            echo "false";
+        } else {
+            echo "true";
+            die;
+        }
     }
 }

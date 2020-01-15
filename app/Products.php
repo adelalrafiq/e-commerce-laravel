@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Products Model
+ */
 class Products extends Model
 {
     public function attributes()

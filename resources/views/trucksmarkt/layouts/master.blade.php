@@ -21,6 +21,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{{asset('front_assets/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('front_assets/css/bootstrap-select.css')}}">
   <link rel="stylesheet" href="{{asset('front_assets/css/passtrength.css')}}">
   <!-- Site CSS -->
   <link rel="stylesheet" href="{{asset('front_assets/css/style.css')}}">
@@ -29,6 +30,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{asset('front_assets/css/custom.css')}}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -62,7 +64,7 @@
   <script src="{{asset('front_assets/js/form-validator.min.js')}}"></script>
   <script src="{{asset('front_assets/js/contact-form-script.js')}}"></script>
   <script src="{{asset('front_assets/js/custom.js')}}"></script>
-  <script src="{{asset('front_assets/js/jquery.passtrength.js')}}"></script>
+  <script src="{{asset('front_assets/js/passtrength.js')}}"></script>
 
   <!-- jQuery - validate -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>

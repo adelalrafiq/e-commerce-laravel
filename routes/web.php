@@ -27,6 +27,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Register/Login
 Route::match(['get', 'post'], '/login-register', 'UsersController@register');
+// Check if User already exist
+Route::match(['get', 'post'], '/check-email', 'UsersController@checkEmail');
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::match(['get', 'post'], '/admin/dashboard', 'AdminController@dashboard');
@@ -59,7 +62,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::match(['get', 'post'], '/admin/edit-banner/{id}', 'BannersController@editBanner');
     Route::match(['get', 'post'], '/admin/delete-banner/{id}', 'BannersController@deleteBanner');
     Route::post('/admin/update-banner-status', 'BannersController@updateStatus');
-
 });
 
 Route::get('/logout', 'AdminController@logout');

@@ -77,7 +77,8 @@
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn-warning">Register</button>
+                                {{-- <button class="btn btn-warning">Register</button> --}}
+                                <input type="submit" id="submit" name="submit" value="Register">
                                 <a class="btn btn-add" href="{{url('/admin')}}">Login</a>
                             </div>
                         </form>
@@ -91,15 +92,18 @@
     <script src="{{asset('admin_assets/plugins/jQuery/jquery-1.12.4.min.js')}}" type="text/javascript"></script>
     <!-- bootstrap js -->
     <script src="{{asset('admin_assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    {{-- <script src="{{asset('admin_assets/dist/js/main.js')}}" type="text/javascript"></script> --}}
+
     <script>
         $(document).ready(function () {
+
         // Validate Register form on keyup and submit
         $('#registerForm').validate({
             rules:{
                 username:{
                     requird:true,
                     minlength:2,
-                    lettersonly:true
+                    accept:"[a-zA-Z]+"
                 },
                 passworsd:{
                     requird:true,
@@ -107,18 +111,20 @@
                 },
                 repeatpassword:{
                     requird:true,
-                    equalTo: "#password" 
+                    equalTo: "#password"
                 },
                 email:{
                     requird:true,
-                    email:true
-                }                
+                    email:true,
+                    remote:"/check-email"
+                }
             },
             messages:{
                 username:{
                     required:"Please enter your Username",
-                    minlength:"Your Username must be atleast 2 characters long"
-                } 
+                    minlength:"Your Username must be atleast 2 characters long",
+                    accept: "Your Username must contain letters only"
+                },
                 password:{
                     required:"Please enter your Password",
                     minlength:"Your password must be atleast 6 characters long"
@@ -129,13 +135,14 @@
                 },
                 email:{
                     required:"Please enter your Email",
-                    email:"Please enter valid Email"
-                } 
+                    email:"Please enter valid Email",
+                    remote:"Email already exists!"
+                }
 
             }
         });
         });
-        
+
     </script>
 </body>
 
