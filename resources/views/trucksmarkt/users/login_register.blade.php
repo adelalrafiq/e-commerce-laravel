@@ -57,28 +57,28 @@
                                 <div class="form-group col-lg-6">
                                     <label>Username</label>
                                     <input type="text" value="" id="username" class="form-control" name="username">
-                                    <span class="help-block small">Your unique username to app</span>
+                                    {{-- <span class="help-block small">Your unique username to app</span> --}}
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Password</label>
                                     <input type="password" value="" id="password" class="form-control" name="password">
-                                    <span class="help-block small">Your hard to guess password</span>
-                                </div>
+                                    {{-- <span class="help-block small">Your hard to guess password</span>
+                                </div> --}}
                                 <div class="form-group col-lg-6">
                                     <label>Repeat Password</label>
                                     <input type="password" value="" id="repeatpassword" class="form-control"
                                         name="repeatpassword">
-                                    <span class="help-block small">Please repeat your pasword</span>
+                                    {{-- <span class="help-block small">Please repeat your pasword</span> --}}
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Email Address</label>
                                     <input type="text" value="" id="email" class="form-control" name="email">
-                                    <span class="help-block small">Your address email to contact</span>
-                                </div>
+                                    {{-- <span class="help-block small">Your address email to contact</span>
+                                </div> --}}
                             </div>
                             <div>
                                 {{-- <button class="btn btn-warning">Register</button> --}}
-                                <input type="submit" id="submit" name="submit" value="Register">
+                                <input type="submit" id="submit" name="submit" class="btn btn-warning" value="Register">
                                 <a class="btn btn-add" href="{{url('/admin')}}">Login</a>
                             </div>
                         </form>

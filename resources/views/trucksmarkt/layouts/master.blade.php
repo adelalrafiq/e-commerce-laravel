@@ -49,6 +49,7 @@
   <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
   <!-- ALL JS FILES -->
+
   <script src="{{asset('front_assets/js/jquery-3.2.1.min.js')}}"></script>
   <script src="{{asset('front_assets/js/popper.min.js')}}"></script>
   <script src="{{asset('front_assets/js/bootstrap.min.js')}}"></script>

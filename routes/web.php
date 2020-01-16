@@ -25,6 +25,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Route for add to cart
+Route::match(['get', 'post'], '/add-cart', 'ProductsController@AddtoCart');
+
 // Register/Login
 Route::match(['get', 'post'], '/login-register', 'UsersController@register');
 // Check if User already exist

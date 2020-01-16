@@ -50,7 +50,13 @@
                 </div>
             </div>
             <div class="col-xl-7 col-lg-7 col-md-6">
+            <form name="addtoCart" method="post" action="{{url('/add-cart')}}">{{csrf_field()}}
                 <div class="single-product-details">
+                <input type="hidden" value="{{$productDetails->id}}" name="product_id">
+                <input type="hidden" value="{{$productDetails->name}}" name="product_name">
+                <input type="hidden" value="{{$productDetails->code}}" name="product_code">
+                <input type="hidden" value="{{$productDetails->color}}" name="color">
+                <input type="hidden" id="price" value="{{$productDetails->price}}" name="price">
                     <h2>Product Name : {{$productDetails->name}}</h2>
                     <h5 id="getPrice">Product Price : €uro {{$productDetails->price}}</h5>
                     {{-- <h5> <del>$ 60.00</del> $40.79</h5> --}}
@@ -62,7 +68,7 @@
                                 <li>
                                     <div class="form-group size-st">
                                         <label class="size-label">Size</label>
-                                        <select id="selSize" class="selectpicker show-tick form-control">
+                                        <select id="selSize"name="size" class="selectpicker show-tick form-control">
                                             <option value="0">Size</option>
                                             @foreach($productDetails->attributes as $sizes)
                                             <option value="{{$productDetails->id}}-{{$sizes->size}}">{{$sizes->size}}
@@ -73,15 +79,14 @@
                                 <li>
                                     <div class="form-group quantity-box">
                                         <label class="control-label">Quantity</label>
-                                        <input class="form-control" value="0" min="0" max="20" type="number">
+                                        <input class="form-control"name="quantity" value="0" min="0" max="20" type="number">
                                     </div>
                                 </li>
                             </ul>
 
                             <div class="price-box-bar">
                                 <div class="cart-and-bay-btn">
-                                    <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a>
-                                    <a class="btn hvr-hover" data-fancybox-close="" href="#">Add to cart</a>
+                                    <button class="btn hvr-hover" data-fancybox-close="" type="submit" style="color:white;">Add to cart</button>
                                 </div>
                             </div>
 
@@ -106,6 +111,7 @@
                                 </div>
                             </div>
                 </div>
+            </form>
             </div>
         </div>
 
@@ -131,7 +137,8 @@
                                         <li><a href="#" data-toggle="tooltip" data-placement="right"
                                                 title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                     </ul>
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" >Add to Cart</a>
+
                                 </div>
                             </div>
                             <div class="why-text">
@@ -154,7 +161,7 @@
     <div class="main-instagram owl-carousel owl-theme">
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-01.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -162,7 +169,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-02.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -170,7 +177,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-03.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -178,7 +185,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-04.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -186,7 +193,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-05.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -194,7 +201,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-06.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -202,7 +209,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-07.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -210,7 +217,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-08.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -218,7 +225,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-09.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
@@ -226,7 +233,7 @@
         </div>
         <div class="item">
             <div class="ins-inner-box">
-                <img src="{{asset('front_assets/images/instagram-img-05.jpg')}}" alt="" />
+                <img src="#" alt="" />
                 <div class="hov-in">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>

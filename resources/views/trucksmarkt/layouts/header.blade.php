@@ -17,7 +17,8 @@
 
                 <div class="our-link">
                     <ul>
-                        <li><a href="{{url('/admin')}}">Login</a></li>
+                        <li><a href="#"><i class="fa fa-cart-plus"></i>Cart</a></li>
+                        <li><a href="{{url('/admin')}}"><i class="fa fa-user"></i>Login</a></li>
                         <li><a href="{{url('/login-register')}}">Register</a></li>
                     </ul>
                 </div>
@@ -46,77 +47,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="dropdown megamenu-fw">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
-                        <ul class="dropdown-menu megamenu-content" role="menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Top</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="shop.html">Jackets</a></li>
-                                                <li><a href="shop.html">Shirts</a></li>
-                                                <li><a href="shop.html">Sweaters & Cardigans</a></li>
-                                                <li><a href="shop.html">T-shirts</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Bottom</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="shop.html">Swimwear</a></li>
-                                                <li><a href="shop.html">Skirts</a></li>
-                                                <li><a href="shop.html">Jeans</a></li>
-                                                <li><a href="shop.html">Trousers</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Clothing</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="shop.html">Top Wear</a></li>
-                                                <li><a href="shop.html">Party wear</a></li>
-                                                <li><a href="shop.html">Bottom Wear</a></li>
-                                                <li><a href="shop.html">Indian Wear</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Accessories</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="shop.html">Bags</a></li>
-                                                <li><a href="shop.html">Sunglasses</a></li>
-                                                <li><a href="shop.html">Fragrances</a></li>
-                                                <li><a href="shop.html">Wallets</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- end col-3 -->
-                                </div>
-                                <!-- end row -->
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SHOP</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="shop-detail.html">Shop Detail</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{{url('/')}}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url('#')}}">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url('#')}}">Contact Us</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -126,7 +59,7 @@
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     <li class="side-menu"><a href="#">
-                            <i class="fa fa-shopping-bag"></i>
+                            <i class="fa fa-cart-plus"></i>
                             <span class="badge">3</span>
                         </a></li>
                 </ul>
