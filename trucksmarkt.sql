@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2020 at 03:59 PM
+-- Generation Time: Jan 16, 2020 at 03:39 PM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.3.5
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wayshop`
+-- Database: `trucksmarkt`
 --
 
 -- --------------------------------------------------------
@@ -49,6 +49,35 @@ INSERT INTO `banners` (`id`, `name`, `text_style`, `sort_order`, `content`, `lin
 (1, 'Welkom in ons Markt', 'left-text', 1, 'Markt van Transport', '#', 1, '68712.jpg', '2020-01-09', '2020-01-09'),
 (2, 'Welkom in ons Markt', 'left-center', 2, 'Markt van Transport', '#', 1, '5565.jpg', '2020-01-09', '2020-01-09'),
 (3, 'Welkom in ons Markt', 'left-right', 3, 'Markt van Transport', '#', 1, '8860.jpg', '2020-01-09', '2020-01-09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(10) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_code` varchar(255) NOT NULL,
+  `product_color` varchar(255) NOT NULL,
+  `size` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `session_id` varchar(255) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `product_id`, `product_name`, `product_code`, `product_color`, `size`, `price`, `quantity`, `user_email`, `session_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Volvo FH 420', '001', 'White', '1-Small', '8', 1, '', '', NULL, NULL),
+(2, 1, 'Volvo FH 420', '001', 'White', 'Medium', '10', 1, '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -217,6 +246,12 @@ ALTER TABLE `banners`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -261,6 +296,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `banners`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`
