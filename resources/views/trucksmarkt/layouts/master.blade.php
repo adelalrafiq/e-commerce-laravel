@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Site Metas -->
-  <title>Trucks Markt - Ecommerce Bootstrap 4 HTML Template</title>
+  <title>Trucks Markt </title>
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <title>@yield('title') - Way Shop</title>
+    <title>@yield('title') - Trucks Markt</title>
     <!-- Favicon and touch icons -->
     <link rel="shortcut icon" href="{{asset('admin_assets/dist/img/ico/favicon.png" type="image/x-icon')}}">
     <!-- Start Global Mandatory Style

@@ -27,6 +27,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route for add to cart
 Route::match(['get', 'post'], '/add-cart', 'ProductsController@AddtoCart');
+// Route for cart
+Route::match(['get', 'post'], '/cart', 'ProductsController@cart');
+// Route for product delete from cart
+Route::get('/cart/delete-product/{id}', 'ProductsController@deleteCartProduct');
 
 // Register/Login
 Route::match(['get', 'post'], '/login-register', 'UsersController@register');
