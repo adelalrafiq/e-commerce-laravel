@@ -19,6 +19,7 @@
                         <div class="filter-sidebar-left">
                             <div class="title-left">
                                 <h3>Categories</h3>
+
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree"
                                 id="list-group-men" data-children=".sub-men">
@@ -39,6 +40,7 @@
                                     </div>
                                 </div>
                                 @endforeach
+
                             </div>
                         </div>
                     </div>

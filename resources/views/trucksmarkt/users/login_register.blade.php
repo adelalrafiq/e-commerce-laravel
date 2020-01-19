@@ -50,8 +50,7 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form action="{{url('/login-register')}}" id="registerForm" name="registerForm" method="post"
-                            novalidate>
+                        <form action="{{url('/login-register')}}" id="registerForm" name="registerForm" method="POST">
                             {{csrf_field()}}
                             <div class="row">
                                 <div class="form-group col-lg-6">
@@ -61,9 +60,10 @@
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Password</label>
-                                    <input type="password" value="" id="password" class="form-control" name="password">
-                                    {{-- <span class="help-block small">Your hard to guess password</span>
-                                </div> --}}
+                                    <input type="password" value="" id="myPassword" class="form-control"
+                                        name="password">
+                                    {{-- <span class="help-block small">Your hard to guess password</span> --}}
+                                </div>
                                 <div class="form-group col-lg-6">
                                     <label>Repeat Password</label>
                                     <input type="password" value="" id="repeatpassword" class="form-control"
@@ -72,13 +72,13 @@
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Email Address</label>
-                                    <input type="text" value="" id="email" class="form-control" name="email">
-                                    {{-- <span class="help-block small">Your address email to contact</span>
-                                </div> --}}
+                                    <input type="email" value="" id="email" class="form-control" name="email">
+                                    {{-- <span class="help-block small">Your address email to contact</span> --}}
+                                </div>
                             </div>
                             <div>
-                                {{-- <button class="btn btn-warning">Register</button> --}}
-                                <input type="submit" id="submit" name="submit" class="btn btn-warning" value="Register">
+                                <button type="submit" class="btn btn-warning">Register</button>
+
                                 <a class="btn btn-add" href="{{url('/admin')}}">Login</a>
                             </div>
                         </form>
@@ -92,58 +92,8 @@
     <script src="{{asset('admin_assets/plugins/jQuery/jquery-1.12.4.min.js')}}" type="text/javascript"></script>
     <!-- bootstrap js -->
     <script src="{{asset('admin_assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
-    {{-- <script src="{{asset('admin_assets/dist/js/main.js')}}" type="text/javascript"></script> --}}
+    <script src="{{asset('front_assets/js/main.js')}}" type="text/javascript"></script>
 
-    <script>
-        $(document).ready(function () {
-
-        // Validate Register form on keyup and submit
-        $('#registerForm').validate({
-            rules:{
-                username:{
-                    requird:true,
-                    minlength:2,
-                    accept:"[a-zA-Z]+"
-                },
-                passworsd:{
-                    requird:true,
-                    minlength:6
-                },
-                repeatpassword:{
-                    requird:true,
-                    equalTo: "#password"
-                },
-                email:{
-                    requird:true,
-                    email:true,
-                    remote:"/check-email"
-                }
-            },
-            messages:{
-                username:{
-                    required:"Please enter your Username",
-                    minlength:"Your Username must be atleast 2 characters long",
-                    accept: "Your Username must contain letters only"
-                },
-                password:{
-                    required:"Please enter your Password",
-                    minlength:"Your password must be atleast 6 characters long"
-                },
-                repeatpassword:{
-                    required:"Please retype your Password",
-                    equalTo: "Please retype the same password"
-                },
-                email:{
-                    required:"Please enter your Email",
-                    email:"Please enter valid Email",
-                    remote:"Email already exists!"
-                }
-
-            }
-        });
-        });
-
-    </script>
 </body>
 
 <!-- Mirrored from thememinister.com/crm/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jun 2019 11:10:02 GMT -->
