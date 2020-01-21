@@ -34,6 +34,12 @@ Route::get('/cart/delete-product/{id}', 'ProductsController@deleteCartProduct');
 
 // Register/Login
 Route::match(['get', 'post'], '/login-register', 'UsersController@register');
+// Users Login/Register page
+Route::get('/login-register', 'UsersController@userLoginRegister');
+// Users Register Form Submit
+Route::post('/user-register', 'UsersController@register');
+// Users Logout
+Route::get('/user-logout', 'UsersController@logout');
 // Check if User already exist
 Route::match(['get', 'post'], '/check-email', 'UsersController@checkEmail');
 

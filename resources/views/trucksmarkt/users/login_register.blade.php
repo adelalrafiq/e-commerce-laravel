@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form action="{{url('/login-register')}}" id="registerForm" name="registerForm" method="POST">
+                        <form action="{{url('/user-register')}}" id="registerForm" name="registerForm" method="POST">
                             {{csrf_field()}}
                             <div class="row">
                                 <div class="form-group col-lg-6">

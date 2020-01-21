@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    public function userLoginRegister(){
+        
+        return view('trucksmarkt.users.login_register');
+
+    }
+
     public function register(Request $request)
     {
         if ($request->isMethod('POST')) {
@@ -17,11 +24,24 @@ class UsersController extends Controller
             if ($usersCount > 0) {
                 return redirect()->back()->with('flash_message_error', 'Email already exists!');
             } else {
-                echo "success";
-                die;
+                // echo "success";die;
+                $user = new User;
+                $user->name = $data['username'];
+                $user->email = $data['email'];
+                $user->password = bcrypt($data['password']);
+                $user->save();
+                if(Auth::attempt(['email'=>$data['email'],'password'=>$data['password']])){
+                    return redirect('/cart');
+                }
+
             }
         }
-        return view('trucksmarkt.users.login_register');
+        
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
+
     }
     public function  checkEmail(Request $request)
     {

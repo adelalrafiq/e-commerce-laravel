@@ -65,7 +65,7 @@ $(document).ready(function () {
     });
 
     // Password strength
-    $("#Password").passtrength({
+    $("#myPassword").passtrength({
         minChars: 4,
         passwordToggle: true,
         eyeImg: "front_assets/images/eye.svg", // toggle icon
