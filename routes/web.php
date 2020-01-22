@@ -32,17 +32,30 @@ Route::match(['get', 'post'], '/cart', 'ProductsController@cart');
 // Route for product delete from cart
 Route::get('/cart/delete-product/{id}', 'ProductsController@deleteCartProduct');
 
-// Register/Login
-Route::match(['get', 'post'], '/login-register', 'UsersController@register');
-// Users Login/Register page
-Route::get('/login-register', 'UsersController@userLoginRegister');
+
+// Users Register page
+Route::get('/user-register', 'UsersController@userRegister');
+
 // Users Register Form Submit
-Route::post('/user-register', 'UsersController@register');
+Route::post('/register', 'UsersController@register');
+
+// User Login Page
+Route::get('/user-login', 'UsersController@userLogin');
+
+// Users Login Form Submit
+Route::post('/login', 'UsersController@login');
+
 // Users Logout
 Route::get('/user-logout', 'UsersController@logout');
+
 // Check if User already exist
 Route::match(['get', 'post'], '/check-email', 'UsersController@checkEmail');
 
+// All Routes after login
+Route::group(['middleware' => ['frontlogin']], function () {
+    // User Account Page
+    Route::match(['get', 'post'], '/account', 'UsersController@account');
+});
 
 Route::group(['middleware' => ['auth']], function () {
     Route::match(['get', 'post'], '/admin/dashboard', 'AdminController@dashboard');

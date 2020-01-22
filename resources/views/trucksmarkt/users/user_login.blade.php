@@ -54,21 +54,24 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form action="{{url('/admin')}}" id="loginForm" method="post">{{csrf_field()}}
+                        <form action="{{url('/login')}}" id="loginForm" name="loginForm" method="POST">{{csrf_field()}}
                             <div class="form-group">
-                                <label class="control-label" for="username">Username</label>
-                                <input type="text" placeholder="example@gmail.com" title="Please enter you username"
-                                    required="" value="" name="username" id="username" class="form-control">
+                                {{-- <label>Email Address</label>
+                                <input type="email" value="" id="email" class="form-control" name="email"> --}}
+                                <label class="control-label" for="email">Email</label>
+                                <input type="email" placeholder="example@gmail.com" title="Please enter you username"
+                                    required="" value="" name="email" id="email" class="form-control">
                                 <span class="help-block small">Your unique username to app</span>
                             </div>
+
                             <div class="form-group">
                                 <label class="control-label" for="password">Password</label>
                                 <input type="password" title="Please enter your password" placeholder="******"
                                     required="" value="" name="password" id="password" class="form-control">
-                                <span class="help-block small">Your strong password</span>
+                                {{-- <span class="help-block small">Your strong password</span> --}}
                             </div>
                             <div>
-                                <button class="btn btn-add">Login</button>
+                                <button type="submit" class="btn btn-add">Login</button>
                                 <a class="btn btn-warning" href="{{url('/user-register')}}">Register</a>
                             </div>
                         </form>

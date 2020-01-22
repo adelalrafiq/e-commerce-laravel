@@ -1,5 +1,5 @@
-$(document).ready(function () {
-    $("#selSize").change(function () {
+$(document).ready(function() {
+    $("#selSize").change(function() {
         var idSize = $(this).val();
         if (idSize == "") {
             return false;
@@ -8,20 +8,20 @@ $(document).ready(function () {
             type: "get",
             url: "/get-product-price",
             data: { idSize: idSize },
-            success: function (resp) {
+            success: function(resp) {
                 // alert(resp);
                 var arr = resp.split("#");
                 $("#getPrice").html("Item Price : €uro " + arr[0]);
                 $("#price").val(arr[0]);
             },
-            error: function () {
+            error: function() {
                 alert("error");
             }
         });
     });
 
     // Validate Register form on keyup and submit
-    $('#registerForm').validate({
+    $("#registerForm").validate({
         rules: {
             username: {
                 required: true,
@@ -34,7 +34,7 @@ $(document).ready(function () {
             },
             repeatpassword: {
                 required: true,
-                equalTo: "#password"
+                equalTo: "#myPassword"
             },
             email: {
                 required: true,
@@ -64,6 +64,28 @@ $(document).ready(function () {
         }
     });
 
+    // Validate Login form on keyup and submit
+    $("#loginForm").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true
+            }
+        },
+        messages: {
+            email: {
+                required: "Please enter your Email",
+                email: "Please enter valid Email"
+            },
+            password: {
+                required: "Please enter your Password"
+            }
+        }
+    });
+
     // Password strength
     $("#myPassword").passtrength({
         minChars: 4,
@@ -71,5 +93,4 @@ $(document).ready(function () {
         eyeImg: "front_assets/images/eye.svg", // toggle icon
         tooltip: true
     });
-
 });
