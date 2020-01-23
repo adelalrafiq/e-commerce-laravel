@@ -55,7 +55,7 @@
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label>Username</label>
-                                    <input type="text" value="" id="username" class="form-control" name="username">
+                                    <input type="text" value="" id="user_name" class="form-control" name="user_name">
                                     {{-- <span class="help-block small">Your unique username to app</span> --}}
                                 </div>
                                 <div class="form-group col-lg-6">

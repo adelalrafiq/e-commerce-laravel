@@ -1,6 +1,116 @@
 @extends('trucksmarkt.layouts.master')
 @section('content')
 
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>CRM Admin panel</title>
+<!-- Favicon and touch icons -->
+<link rel="shortcut icon" href="{{asset('admin_assets/dist/img/ico/favicon.png')}}" type="image/x-icon">
+<!-- Bootstrap -->
+<link href="{{asset('admin_assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+<!-- Bootstrap rtl -->
+<!--<link href="admin_assets/bootstrap-rtl/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>-->
+<!-- Pe-icon-7-stroke -->
+<link href="{{asset('admin_assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}" rel="stylesheet" type="text/css" />
+<!-- style css -->
+<link href="{{asset('admin_assets/dist/css/stylecrm.css')}}" rel="stylesheet" type="text/css" />
+<!-- Theme style rtl -->
+<!--<link href="admin_assets/dist/css/stylecrm-rtl.css" rel="stylesheet" type="text/css"/>-->
+</head>
+
+<!-- Content Header (Page header) -->
+@if(Session::has('flash_message_error'))
+<div class="alert alert-sm alert-danger alert-block" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{!! session('flash_message_error') !!}</strong>
+</div>
+@endif
+
+@if(Session::has('flash_message_success'))
+<div class="alert alert-sm alert-success alert-block" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{!! session('flash_message_success') !!}</strong>
+</div>
+@endif
+
+<!-- Form update My Account  -->
+<div class="login-area">
+    <div class="panel panel-bd panel-custom">
+        <div class="panel-heading">
+            <div class="view-header">
+                <div class="header-icon">
+                    <i class="fas fa-pen"></i>
+                </div>
+                <div class="header-title">
+                    <h3>Update</h3>
+                    <small><strong>Please enter your data to update.</strong></small>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <form action="{{url('/account')}}" id="accountForm" name="accountForm" method="POST">
+        {{csrf_field()}}
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label>User Name</label>
+            <input type="text" value="{{$userDetails->user_name}}" id="user_name" class="form-control" name="user_name">
+            </div>
+            <div class="form-group col-lg-6">
+                <label>Email Address</label>
+            <input type="text" value="{{$userDetails->email}}" id="email" class="form-control" name="email">
+            </div>
+            <div class="form-group col-lg-6">
+                <label>First Name</label>
+            <input type="text" value="{{$userDetails->first_name}}" id="first_name" class="form-control" name="first_name">
+            </div>
+            <div class="form-group col-lg-6">
+                <label>Last Name</label>
+                <input type="text" value="{{$userDetails->last_name}}" id="last_name" class="form-control" name="last_name">
+            </div>
+            <div class="form-group col-lg-6">
+                <label>Address</label>
+                <input type="text" value="{{$userDetails->address}}" id="address" class="form-control" name="address">
+            </div>
+            <div class="form-group col-lg-6">
+                <label>Postal Code</label>
+                <input type="text" value="{{$userDetails->postal_code}}" id="postal_code" class="form-control" name="postal_code">
+            </div>
+            <div class="form-group col-lg-6">
+                <label>City</label>
+                <input type="text" value="{{$userDetails->city}}" id="city" class="form-control" name="city">
+            </div>
+            <div class="form-group col-lg-6">
+                <label>State</label>
+                <input type="text" value="{{$userDetails->state}}" id="state" class="form-control" name="state">
+            </div>
+            <div class="form-group col-lg-6">
+                <label>Country</label>
+                <select style="height:34px;" id="country" name="country" class="form-control">
+                    <option value="">Select Country</option>
+                    @foreach($countries as $country)
+                <option value="{{$country->country_name}}"@if($country->country_name == $userDetails->country) selected @endif>{{$country->country_name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group col-lg-6">
+                <label>Tel</label>
+                <input type="text" value="{{$userDetails->tel}}" id="tel" class="form-control" name="tel">
+            </div>
+
+        </div>
+        <div>
+            <button type="submit" class="btn btn-warning">Update</button>
+
+
+        </div>
+    </form>
+</div>
+    </div>
+</div>
+
   <!-- Start My Account  -->
   <div class="my-account-box-main">
     <div class="container">
@@ -179,4 +289,12 @@
 </div>
 <!-- End My Account -->
 
+ <!-- jQuery -->
+ <script src="{{asset('admin_assets/plugins/jQuery/jquery-1.12.4.min.js')}}" type="text/javascript"></script>
+ <!-- bootstrap js -->
+ <script src="{{asset('admin_assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+ <script src="{{asset('front_assets/js/main.js')}}" type="text/javascript"></script>
+
 @endsection
+
+

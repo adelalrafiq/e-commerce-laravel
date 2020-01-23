@@ -23,7 +23,7 @@ $(document).ready(function() {
     // Validate Register form on keyup and submit
     $("#registerForm").validate({
         rules: {
-            username: {
+            user_name: {
                 required: true,
                 minlength: 2,
                 accept: "[a-zA-Z]+"
@@ -43,7 +43,7 @@ $(document).ready(function() {
             }
         },
         messages: {
-            username: {
+            user_name: {
                 required: "Please enter your Username",
                 minlength: "Your Username must be atleast 2 characters long",
                 accept: "Your Username must contain letters only"
@@ -82,6 +82,62 @@ $(document).ready(function() {
             },
             password: {
                 required: "Please enter your Password"
+            }
+        }
+    });
+
+    // Validate Account form on keyup and submit
+    $("#accountForm").validate({
+        rules: {
+            user_name: {
+                required: true,
+                minlength: 2,
+                accept: "[a-zA-Z]+"
+            },
+            email: {
+                required: true,
+                email: true,
+                remote: "/check-email"
+            },
+            address: {
+                required: true,
+                minlength: 6
+            },
+            postal_code: {
+                required: true,
+                minlength: 2
+            },
+            city: {
+                required: true,
+                minlength: 2
+            },
+            country: {
+                required: true,
+                minlength: 2
+            }
+        },
+        messages: {
+            user_name: {
+                required: "Please enter your Username",
+                minlength: "Your Username must be atleast 2 characters long",
+                accept: "Your Username must contain letters only"
+            },
+            email: {
+                required: "Please enter your Email",
+                email: "Please enter valid Email",
+                remote: "Email already exists!"
+            },
+            address: {
+                required: "Please enter your address",
+                minlength: "Your address must be atleast 6 characters long"
+            },
+            city: {
+                required: "Please enter your City",
+                minlength: "Your City must be atleast 2 characters long"
+            },
+            country: {
+                required: "Please enter your Country",
+                minlength: "Your Country must be atleast 2 characters long"
             }
         }
     });
