@@ -44,6 +44,7 @@
     <![endif]-->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="apple-touch-icon" href="https://static.classistatic.de/showroom/static/img/favicons/default/apple-touch-icon-144x144.png" sizes="144x144">
     <link rel="apple-touch-icon" href="https://static.classistatic.de/showroom/static/img/favicons/default/apple-touch-icon-114x114.png" sizes="114x114">
     <link rel="apple-touch-icon" href="https://static.classistatic.de/showroom/static/img/favicons/default/apple-touch-icon-72x72.png" sizes="72x72">
@@ -55,6 +56,11 @@
 
 =======
 >>>>>>> parent of 2eac15e... updated
+=======
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbJ7yGTV+7Msdbuv/hKzr6/347tLw8O/S8vLy0vPz89Ly8vLS8PDw0vDw79Lt7e3S6urqnNDQ0AQAAAAAXpbwGih27MEfcOv/DWbr/4iv7P//+vD/8vLy//X19f/29vb/9fX1//Pz8//y8vL/7+/v/+3t7f3q6em05OTkGTR97c4fcOv/H3Dr/w5m6/+Ir+z///rw//Ly8v/19fX/9vb2//X19f/z8/P/8vLy/+/v7//t7e3/6urq/+fn5s8hcev/H3Dr/x9w6/8OZuv/iK/s///67/////////////X19f////////////Hx8f/6+vr//v7+/+vr6//n5+f/H3Dr/x9w6/8fcOv/Dmbr/4iw7f///fX/nJ2d/5mamf/6+vr/pqen/4+Qj//4+Pj/ra6u/4WGhv/m5ub/6urq/x9w6/8fcOv/H3Dr/w5m6/+IsO3////8/y0vL/8iJCT//////0FCQv8OEBD//////1laWv8AAgL/4eHh/+3t7f8fcOv/H3Dr/x9w6/8OZuv/iLDt////+/88Pj7/MjQ0//////9PUFD/HyEh//////9kZWX/EhQU/+Li4v/t7e3/H3Dr/x9w6/8fcOv/Dmbr/4iw7f////v/PD4+/zI0NP//////T1BQ/x8hIf//////ZGVl/xIUFP/i4uL/7e3t/x9w6/8fcOv/H3Dr/w5m6/+IsO3////7/zw+Pv80Njb//////1JTU/8gIiL//////2hpaf8RExP/4uLi/+3t7f8fcOv/H3Dr/x9w6/8OZuv/iLDt////+/8/QED/ERMT/8XGxv8/QUH/BggI/7+/v/9KTEz/ExUV/+Tk5P/t7Oz/H3Dr/x9w6/8fcOv/Dmbr/4iw7f////r/SktL/y0vL/8oKir/AgMD/2FiYv82Nzf/AAAA/2BhYf/19fT/6Ojo/x9w6/8fcOv/H3Dr/w5m6/+Ir+z///rx/+jo6P/y8vL/7O3t/87Ozv/8/Pz/7e3t/8nJyf/v7u7/7Ozs/+fn5/8fcOv/H3Dr/x9w6/8OZuv/iK/s///68P/19fX/9/f3//n5+f/9/f3/9PT0//X19f/39/f/7u7u/+rq6v/n5+f/MXvs4x5w6/8fcOv/Dmbr/4iv7P//+vD/8vLy//X19f/29vb/9fX1//Pz8//y8vL/7+/v/+3t7f/q6ur/5+fmwU2M7yUoduzGH3Dr/w5m6/+Ir+z///rw//Ly8v/19fX/9vb2//X19f/z8/P/8vLy/+/v7//t7e3/6urpu+Pj4hMAAAAAc6PyGDN87McRaOv/hq7r//347f/v7+//8fHx//Ly8v/x8fH/8PDw/+/v7//t7e386+vqtuLi4RAAAAAAwAMAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAwAMAAA==">
+    <link rel="stylesheet" type="text/css" href="//static.classistatic.de/pubse/static/tsp.184b429345fd85c9064cf5e13e4d03ac.css">
+    
+>>>>>>> parent of e67aef4... updated
 </head>
 
 <body>
@@ -91,6 +97,7 @@
   <!--Main.js -->
   <script src="{{asset('front_assets/js/main.js')}}"></script>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   <script>
     LUX = (function() {
@@ -260,6 +267,18 @@
 
 =======
 >>>>>>> parent of 2eac15e... updated
+=======
+  <script type="text/javascript" src="https://de.ioam.de/tx.io?st=mobile&amp;cp=DE%2FEN%2FOB%2FS%2FL%2FM%2FG&amp;sv=i2&amp;sc=yes&amp;pt=CP&amp;ps=lin&amp;er=N22&amp;rf=suchen.mobile.de&amp;r2=https%3A%2F%2Fsuchen.mobile.de%2Ffahrzeuge%2Fsearch.html.s.Truck&amp;ur=suchen.mobile.de&amp;xy=1536x864x24&amp;lo=BE%2FAntwerpen&amp;cb=0017&amp;i2=0017ca26b983288685e3175e3&amp;ep=1604197318&amp;vr=416&amp;id=gsc0a3&amp;i3=00144a2e08a881f6f5def7516%3A1604918167376%3A1575974167376%3A.mobile.de%3A24%3Amobile%3ADE%2FDE%2FOB%2FS%2FL%2FM%2FG%3Anoevent%3A1580299737556%3Aghxjqn&amp;n1=14&amp;dntt=0&amp;lt=1580299747428&amp;ev=&amp;cs=99zz5b&amp;mo=1"></script>
+  <script src="https://static.classistatic.de/adv/js/nf/adframe.js"></script>
+  <script src="https://static.classistatic.de/adv/js/2363253196advFallback.js"></script>
+  <script src="https://static.classistatic.de/adv/js/3847088055advertisingHead.js"></script>
+  <script src="https://static.classistatic.de/adv/js/547710413csaHead.js"></script>
+  <script src="//cdn.optimizely.com/js/5177670490.js"></script>
+  {{-- <script src="{{asset('front_assets/js/truck_awesome.js')}}"></script> --}}
+  {{-- <script src="{{asset('front_assets/js/lux.js')}}"></script> --}}
+  {{-- <script src="{{asset('front_assets/js/ad.js')}}"></script> --}}
+ 
+>>>>>>> parent of e67aef4... updated
 </body>
 
 </html>
