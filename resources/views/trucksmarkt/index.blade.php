@@ -13,7 +13,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>{!!$banner->name!!}</strong></h1>
                         <p class="m-b-40">{!!$banner->content!!}</p>
-                        <p><a class="btn hvr-hover" href="{{$banner->link}}">Shop New</a></p>
+                        <p><a class="btn hvr-hover" href="{{$banner->link}}"></a></p>
                     </div>
                 </div>
             </div>
