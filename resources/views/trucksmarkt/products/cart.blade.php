@@ -50,9 +50,7 @@
                                 <td class="price-pr">
                                     <p>Euro {{$cart->price}}</p>
                                 </td>
-                                <td class="quantity-box">
-                                    <a href=""type=""></a>
-                                    <input type="number" size="4" value="{{$cart->quantity}}" min="0" step="1" class="c-input-text qty text"></td>
+                                <td class="quantity-box"><input type="number" size="4" value="{{$cart->quantity}}" min="0" step="1" class="c-input-text qty text"></td>
                                 <td class="total-pr">
                                 <p>Euro {{$cart->price*$cart->quantity}}</p>
                                 </td>

@@ -43,6 +43,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<<<<<<< HEAD
     <link rel="apple-touch-icon" href="https://static.classistatic.de/showroom/static/img/favicons/default/apple-touch-icon-144x144.png" sizes="144x144">
     <link rel="apple-touch-icon" href="https://static.classistatic.de/showroom/static/img/favicons/default/apple-touch-icon-114x114.png" sizes="114x114">
     <link rel="apple-touch-icon" href="https://static.classistatic.de/showroom/static/img/favicons/default/apple-touch-icon-72x72.png" sizes="72x72">
@@ -52,6 +53,8 @@
     <link rel="mask-icon" href="https://static.classistatic.de/showroom/static/img/favicons/default/safari-pinned-tab.svg" color="#000">
 
 
+=======
+>>>>>>> parent of 2eac15e... updated
 </head>
 
 <body>
@@ -88,6 +91,7 @@
   <!--Main.js -->
   <script src="{{asset('front_assets/js/main.js')}}"></script>
 
+<<<<<<< HEAD
   <script>
     LUX = (function() {
         var a = ("undefined" !== typeof (LUX) && "undefined" !== typeof (LUX.gaMarks) ? LUX.gaMarks : []);
@@ -254,6 +258,8 @@
 
 
 
+=======
+>>>>>>> parent of 2eac15e... updated
 </body>
 
 </html>
