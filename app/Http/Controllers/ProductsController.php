@@ -271,15 +271,15 @@ class ProductsController extends Controller
             Session::put('session_id', $session_id);
         }
 
-        $sizeArr = explode('-', $data['size']);
+        // $sizeArr = explode('-', $data['size']);
         DB::table('cart')->insert([
             'product_id' => $data['product_id'],
             'product_name' => $data['product_name'],
             'product_code' => $data['product_code'],
             'product_color' => $data['color'],
             'price' => $data['price'],
-            'size' => $sizeArr[1],
-            'quantity' => $data['quantity'],
+            // 'size' => $sizeArr[''],
+            // 'quantity' => $data['quantity'],
             'user_email' => $data['user_email'],
             'session_id' => $session_id
         ]);
