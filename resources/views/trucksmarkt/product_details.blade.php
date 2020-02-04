@@ -56,15 +56,15 @@
                         <input type="hidden" value="{{$productDetails->name}}" name="product_name">
                         <input type="hidden" value="{{$productDetails->code}}" name="product_code">
                         <input type="hidden" value="{{$productDetails->color}}" name="color">
-                        <input type="hidden" id="price" value="{{$productDetails->price}}" name="price">
+                        <input type="hidden" id="price" value="{{number_format($productDetails->price,0,',','.')}}" name="price">
                         <h2>Product Name : {{$productDetails->name}}</h2>
-                        <h5 id="getPrice">Product Price : €uro {{$productDetails->price}}</h5>
+                        <h5 id="getPrice">Product Price : € {{number_format($productDetails->price,0,',','.')}}</h5>
                         {{-- <h5> <del>$ 60.00</del> $40.79</h5> --}}
                         <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span>
                             <p>
                                 <h4>Short Description:</h4>
                                 <p>{{$productDetails->description}}</p>
-                                {{-- <ul>
+                                <ul>
                                     <li>
                                         <div class="form-group size-st">
                                             <label class="size-label">Size</label>
@@ -84,7 +84,7 @@
                             <input class="form-control" name="quantity" value="0" min="0" max="20" type="number">
                         </div>
                     </li>
-                    </ul> --}}
+                    </ul>
 
                     <div class="price-box-bar">
                         <div class="cart-and-bay-btn">
@@ -141,7 +141,7 @@
                         </div>
                         <div class="why-text">
                             <h4>{{$featuredProduct->name}}</h4>
-                            <h5> € {{$featuredProduct->price}}</h5>
+                            <h5> € {{number_format($featuredProduct->price,0,',','.')}}</h5>
                         </div>
                     </div>
                 </div>

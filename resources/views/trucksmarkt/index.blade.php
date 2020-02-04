@@ -114,8 +114,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4>{{$product->description}}</h4>
-                                                    <h5>{{$product->price}}</h5>
+                                                    <h5>{{$product->name}}</h5>
+                                                    <h5>Price: € {{number_format($product->price,0,',','.')}}</h5>
                                                 </div>
                                             </div>
                                         </div>
